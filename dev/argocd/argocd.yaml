@@ -1,0 +1,14 @@
+project: fullstack-demo
+source:
+  repoURL: 'https://github.com/Friddl/hello-world-service-config.git'
+  path: dev
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: fullstack-demo
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
