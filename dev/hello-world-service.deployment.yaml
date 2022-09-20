@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-service
+  labels:
+    app: hello-world-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hello-world-service
+      labels:
+        app: hello-world-service
+    spec:
+      containers:
+        - name: hello-world-service
+          image: deschery/hello-world-service
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: hello-world-service
