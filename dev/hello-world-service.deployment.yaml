@@ -15,7 +15,7 @@ spec:
       containers:
         - name: hello-world-service
           image: deschery/hello-world-service
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy:  Always
       restartPolicy: Always
   selector:
     matchLabels:
